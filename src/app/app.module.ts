@@ -3,10 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PublicComponent } from './public/public.component';
-import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './public/login/login.component';
+import { PublicComponent } from './public/public.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { LoginComponent } from './public/login/login.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AppRoutingModule
     
     
   ],

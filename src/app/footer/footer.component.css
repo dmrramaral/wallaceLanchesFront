@@ -2,6 +2,11 @@
     .cabecalho .logo {
       padding: 2rem;
     }
+
+    footer {
+      font-size:xx-small;
+      
+    }
   
     .cabecalho p {
       font-size: 1.5rem

@@ -4,7 +4,8 @@ import { LoginComponent } from './public/login/login.component';
 import { PublicComponent } from './public/public.component';
 
 const routes: Routes = [
-  {path: '', component: PublicComponent}
+  {path: '', component: PublicComponent},
+  {path: 'login', component: LoginComponent},
  /*  { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
    */
  /*  { path: 'login', loadChildren: () => import('.public/login/login.module').then(m => m.LoginModule)} */
