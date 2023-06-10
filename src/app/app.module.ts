@@ -7,6 +7,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './public/login/login.component';
 import { PublicComponent } from './public/public.component';
+import { HttpClientModule } from '@angular/common/http';
+import { CurrencyBrlPipe } from './currency-brl.pipe';
 
 @NgModule({
   declarations: [
@@ -14,11 +16,15 @@ import { PublicComponent } from './public/public.component';
     PublicComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    
+
     
     
   ],

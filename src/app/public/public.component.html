@@ -55,49 +55,23 @@
 
 
     <div id="cards" class="d-flex justify-content-center flex-wrap">
-        <div class="card mt-3" style="width: 18rem;">
+        <div *ngFor="let sanduiches of sanduiche |async" class="card mt-3 mx-2" style="width: 18rem;">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
-                    dy=".3em">Sanduiche</text>
+              role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#868e96"></rect>
+              <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
             </svg>
             <div class="card-body">
-                <h5 class="card-title">X-Tudo</h5>
-                <p class="card-text mb-0">Ingredientes:</p>
-                <p class="card-text">Pão, hamburguer, queijo minas, alface, tomate e bancon.</p>
-                <a href="#" class="btn btn-primary">Peça o seu agora</a>
-            </div>
-        </div>
-
-        <div class="card mt-3" style="width: 18rem;">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Sanduiche" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
-                    dy=".3em">Sanduiche</text>
-            </svg>
-            <div class="card-body">
-                <h5 class="card-title">X-Salada Especial</h5>
-                <p class="card-text mb-0">Ingredientes:</p>
-                <p class="card-text">Pão, hamburguer, queijo minas, alface, tomate, salsicha, milho ervilha e bancon.
-                </p>
-                <a href="#" class="btn btn-primary">Peça o seu agora</a>
-            </div>
-        </div>
-
-        <div class="card mt-3" style="width: 18rem;">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Sanduiche" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect><text x="50%" y="50%" fill="#dee2e6"
-                    dy=".3em">Sanduiche</text>
-            </svg>
-            <div class="card-body">
-                <h5 class="card-title">X-Bacon Salada</h5>
-                <p class="card-text mb-0">Ingredientes:</p>
-                <p class="card-text">Pão, hamburguer, queijo minas, alface, tomate e ovo.</p>
-                <a href="#" class="btn btn-primary">Peça o seu agora</a>
+              <h5 class="card-title">{{sanduiches.nome}}</h5>
+              <p class="card-text mb-0">Ingredientes:</p>
+              <p class="card-text">
+                {{ getIngredientesList(sanduiche | async) }}
+              </p>
+              <p class="card-text mb-0">Valor:</p>
+              <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
+              <a *ngIf="sanduiches.valorSanduiche > 0" href="#" class="btn btn-primary">Peça o seu agora</a>
+              <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
             </div>
         </div>
     </div>

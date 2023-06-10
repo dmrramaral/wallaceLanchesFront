@@ -1,0 +1,49 @@
+[
+    {
+        "id": "1",
+        "nome": "X-Tudo",
+        "ingredientes": [
+            "Pão",
+            "Hamburguer",
+            "Ovo",
+            "Bacon",
+            "Queijo",
+            "Alface",
+            "Tomate",
+            "Cebola",
+            "Molho"
+        ],
+        "valor": 20.00
+    },{
+        "id": "2",
+        "nome": "X-Burguer",
+        "ingredientes": [
+            "Pão",
+            "Hamburguer",
+            "Queijo"],
+        "valor": 10.00
+    },{
+        "id": "3",
+        "nome": "X-Salada",
+        "ingredientes": [
+            "Pão",
+            "Hamburguer",
+            "Queijo",
+            "Alface",
+            "Tomate",
+            "Cebola"
+        ],
+        "valor": 15.00
+    },{
+        "id": "4",
+        "nome": "X-Bacon",
+        "ingredientes": [
+            "Pão",
+            "Hamburguer",
+            "Bacon",
+            "Queijo"
+        ],
+        "valor": 0.00
+    }
+    
+]
