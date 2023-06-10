@@ -1,0 +1,3 @@
+class sanduiche{
+    id: number;
+}

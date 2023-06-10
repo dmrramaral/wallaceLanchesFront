@@ -1,0 +1,82 @@
+#logo img{
+    text-align: center;
+    width: 168px;
+    margin-top: 64px;
+    margin-bottom: 54px;
+
+}
+
+#logo{
+    text-align: center;
+}
+
+#inputCadastro{
+    color: #de2b2b;
+}
+
+#inputCadastro input{
+    font-family: 'Imprima',sans-serif;
+    font-size: 20px;
+    color: #de2b2b;
+    text-align: center;
+    height: 53px;
+    margin-bottom: 21px;
+    background-color: #d9d9d9;
+
+    border: solid;
+    border-radius: 15px;
+    border-color: yellow;
+    
+
+}
+
+#inputCadastro input:hover{
+    transform: scale(1.1);
+    transition: 0.4 all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 2px 2px 2px yellow;
+}
+
+#inputCadastro input::placeholder {
+    color: #de2b2b;
+
+}
+
+#imgBatata {
+
+    width: 30px;
+    height: 35px;
+    margin-left: 10px ;
+
+}
+
+#imgSanduiche {
+
+    width: 32px;
+    height: 37px;
+    margin-right: 10px;
+
+}
+
+#buttonCadastro{
+    font-family: 'Imprima', sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-size: 20px;
+    color: #de2b2b;
+    background-color: yellow;
+    height: 64px;
+}
+
+#mensagemJaPossui{
+    font-family: 'Imprima', sans-serif;
+    text-align: center;
+    font-style: normal;
+    font-size: 20px;
+    color: white;
+    margin-top: 30px;
+}
+
+#linkEntrar{
+    color: yellow;
+    font: bold;
+}
