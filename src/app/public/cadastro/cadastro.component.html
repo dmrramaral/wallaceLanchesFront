@@ -1,40 +1,40 @@
-
 <div id="cadastro" class="container mt-3">
-    <form class="container col-10">
+    <form [formGroup]="cadastroForm" class="container col-10" (ngSubmit)="onSubmit()">
         <div id="inputCadastro">
+            <!--Campo Nome    -->
             <div id="inputName">
-                <input type="text" class="form-control" alt="Preencha com o seu nome" name="name" id="name" placeholder="Nome">
+                <input type="text" class="form-control" alt="Preencha com o seu nome" formControlName="nome" placeholder="Nome">
             </div>
-    
-            <div id="inputCpf">
-                <input type="text" class="form-control" name="cpf" id="cpf" placeholder="CPF">
+
+            <!--Campo Telefone    -->
+            <div id="inputTelefone">
+                <input type="text" class="form-control" alt="Preencha com o seu telefone" formControlName="telefone" placeholder="Telefone">
             </div>
-            
-            <div id="inputPhone">
-                <input type="tel" name="phone" id="phone" class="form-control" placeholder="Telefone">
+
+            <!--Campo CPF    -->
+            <div id="inputCPF">
+                <input type="text" class="form-control" alt="Preencha com o seu CPF" formControlName="cpf" placeholder="CPF">
             </div>
-    
-            <div id="inputPassword">
-                <input type="password" name="password" id="password" class="form-control" placeholder="Senha">
+
+            <!--Campo E-mail    -->
+            <div id="inputEmail">
+                <input type="email" class="form-control" alt="Preencha com o seu e-mail" formControlName="email" placeholder="E-mail">
             </div>
-            
-            <div id="inputConfirmPassword">
-                <input type="password" name="confirmPassword" id="confirmPassword" class="form-control" placeholder="Confirme a Senha">
+
+            <!--Campo Senha    -->
+            <div id="inputSenha">
+                <input type="password" class="form-control" alt="Preencha com a sua senha" formControlName="password" placeholder="Senha">
             </div>
-    
+
             <div class="container text-center g-2">
-                <button id="buttonCadastro" class="btn" type="submit col-10">
+                <button id="buttonCadastro" class="btn" type="submit">
                     <img id="imgSanduiche" src="assets\img\hamburguer.png" alt="Icone de um Sanduíche">
                     Cadastrar
                     <img id="imgBatata" src="assets\img\batatas-fritas.png" alt="Icone de uma Batatas Frita">
-                
                 </button>
             </div>
-            
         </div>
     </form>
 </div>
-
-
 
 <p id="mensagemJaPossui">Já possui cadastro?<span id="linkEntrar" routerLink="/login"> Entrar</span></p>

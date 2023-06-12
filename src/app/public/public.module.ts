@@ -5,19 +5,25 @@ import { PublicRoutingModule } from './public-routing.module';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { CurrencyBrlPipe } from '../currency-brl.pipe';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [
     CadastroComponent,
-    CurrencyBrlPipe
+    CurrencyBrlPipe,
+    
   ],
   imports: [
     CommonModule,
     PublicRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    
+  ],
+  exports: [
     
     
-  ]
-})
+  ]})
 export class PublicModule { }

@@ -17,7 +17,7 @@ export class PublicComponent implements OnInit {
     this.sanduiche = this.publicService.listar();
   }
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    
   }
 
   getIngredientesList(ingredientes: Sanduiche[] | null): String | undefined {
