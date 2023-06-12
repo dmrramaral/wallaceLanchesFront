@@ -69,8 +69,8 @@
                 {{ getIngredientesList(sanduiche | async) }}
               </p>
               <p class="card-text mb-0">Valor:</p>
-              <p class="card-text">{{sanduiches.valorSanduiche.toString() }}</p>
-              <a *ngIf="sanduiches.valorSanduiche > 0" href="#" class="btn btn-primary">Peça o seu agora</a>
+              <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
+              <a *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#" class="btn btn-primary">Peça o seu agora</a>
               <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
             </div>
         </div>
