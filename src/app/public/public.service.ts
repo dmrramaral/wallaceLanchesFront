@@ -14,8 +14,10 @@ export class PublicService {
 
   constructor(private httpClient : HttpClient) { }
 
+  private readonly API = `http://ec2-18-231-74-81.sa-east-1.compute.amazonaws.com:8080/api/sanduiche`;
+
   listar() : Observable<Sanduiche[]> {
-    return this.httpClient.get<Sanduiche[]>(`${environment.public_api}/sanduiche`).pipe(take(1));;
+    return this.httpClient.get<Sanduiche[]>(this.API).pipe(take(1));;
     
   }
 
