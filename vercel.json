@@ -1,7 +1,7 @@
 {
 
-    "buildCommand": "npm run build --proxy-config proxy.conf.json",
-    "installCommand": "npm install --proxy-config proxy.conf.json",
+    "buildCommand": "npm run build --proxy-config proxy.conf.js",
+    "installCommand": "npm install --proxy-config proxy.conf.js",
     "routes":[
         {
             "src":"^/api/(.*)$",
