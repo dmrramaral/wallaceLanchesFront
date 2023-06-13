@@ -37,22 +37,23 @@
 
 
     <div id="cards" class="d-flex justify-content-center flex-wrap">
-        <div *ngFor="let sanduiches of sanduiche |async" class="card mt-3 mx-2" style="width: 18rem;">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
+        <div id="promocoes" *ngFor="let sanduiches of sanduiche |async" class="card m-1 col-5 col-md-3 col-">
+       <!--      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
                 <rect width="100%" height="100%" fill="#868e96"></rect>
                 <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
-            </svg>
+            </svg> -->
             <div class="card-body">
-                <h5 class="card-title">{{sanduiches.nome}}</h5>
+                <p>Promoção</p>
+                <h5 class="card-title">{{sanduiches.nomeSanduiche}}</h5>
                 <p class="card-text mb-0"><b>Ingredientes:</b></p>
-                <p class="card-text">
-                    {{ getIngredientesList(sanduiche | async) }}
+                <p class="card-text mb-0">
+                    {{ getIngredientesList(sanduiche | async) }}.
                 </p>
-                <p class="card-text mb-0">Valor:</p>
+                <p class="card-text mt-0 mb-0"><b>Valor:</b></p>
                 <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
-                <a *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#" class="btn btn-primary">Peça o seu
+                <a id="buttoncard" *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#" class="btn btn-primary">Peça o seu
                     agora</a>
                 <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
             </div>

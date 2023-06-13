@@ -13,11 +13,25 @@
 #cards .card h5{
     font-size: 13px !important;
 }
-#cards card {
-    margin-top: 10px !important;
+#cards .card {
+    margin-top: 2% !important;
 }
+
+
 
 #carousel-inner img{
     width: 100%;
     height: 100%;
 }
+
+.promocoes{
+ 
+}
+
+/* Diminuir a fonte do id id="buttoncard" se a tela for de smartphone */
+@media screen and (max-width: 600px) {
+    #buttoncard {
+        font-size: 10px;
+    }
+}
+
