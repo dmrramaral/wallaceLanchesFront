@@ -4,7 +4,7 @@
     "routes":[
         {
             "src":"^/api/(.*)$",
-            "dest":"http://ec2-15-228-223-198.sa-east-1.compute.amazonaws.com:8080/"
+            "dest":"http://ec2-15-228-223-198.sa-east-1.compute.amazonaws.com:8080"
         }
 
 
