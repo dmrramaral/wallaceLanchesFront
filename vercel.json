@@ -1,6 +1,6 @@
 {
 
-    "buildCommand": "npm run build --proxy-config proxy.conf.js",
+    "buildCommand": "npm run build",
     "routes":[
         {
             "src":"^/api/(.*)$",
