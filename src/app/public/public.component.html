@@ -39,23 +39,76 @@
     <div id="cards" class="d-flex justify-content-center flex-wrap">
         <div *ngFor="let sanduiches of sanduiche |async" class="card mt-3 mx-2" style="width: 18rem;">
             <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
-              role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
-              <title>Placeholder</title>
-              <rect width="100%" height="100%" fill="#868e96"></rect>
-              <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
+                role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
+                <title>Placeholder</title>
+                <rect width="100%" height="100%" fill="#868e96"></rect>
+                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
             </svg>
             <div class="card-body">
-              <h5 class="card-title">{{sanduiches.nome}}</h5>
-              <p class="card-text mb-0"><b>Ingredientes:</b></p>
-              <p class="card-text">
-                {{ getIngredientesList(sanduiche | async) }}
-              </p>
-              <p class="card-text mb-0">Valor:</p>
-              <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
-              <a *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#" class="btn btn-primary">Peça o seu agora</a>
-              <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
+                <h5 class="card-title">{{sanduiches.nome}}</h5>
+                <p class="card-text mb-0"><b>Ingredientes:</b></p>
+                <p class="card-text">
+                    {{ getIngredientesList(sanduiche | async) }}
+                </p>
+                <p class="card-text mb-0">Valor:</p>
+                <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
+                <a *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#" class="btn btn-primary">Peça o seu
+                    agora</a>
+                <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
             </div>
         </div>
+    </div>
+
+
+
+    <div class="sobre m-3">
+        <div class="card text-center">
+            <div class="card-header">
+                <b> Sobre</b>
+            </div>
+            <div class="card-body">
+
+                <p class="card-text">No Wallace Lanches, estamos comprometidos em satisfazer os paladares mais exigentes
+                    com nossas deliciosas opções de sanduíches artesanais. Localizada em Luziânia, nossa lanchonete é
+                    conhecida pela qualidade excepcional dos nossos lanches e pela experiência gastronômica única que
+                    oferecemos.
+                </p>
+                <p class="card-text"> Nossos sanduíches são preparados com ingredientes frescos e selecionados,
+                    garantindo sabores autênticos e texturas incríveis. Valorizamos a qualidade e o sabor, e é por isso
+                    que trabalhamos com maionese caseira, feita com ingredientes frescos e naturais, que dá um toque
+                    especial a cada mordida.
+                </p>
+                <p class="card-text"> No Wallace Lanches, você encontrará um cardápio diversificado, com opções para
+                    todos os gostos. Temos sanduíches clássicos que conquistaram o coração dos nossos clientes, bem como
+                    criações exclusivas que vão surpreender o seu paladar. E se você tiver alguma preferência especial
+                    ou restrição alimentar, nossa equipe estará pronta para personalizar o seu pedido.
+                </p>
+                <p class="card-text"> Além da qualidade dos nossos lanches, também nos orgulhamos do nosso ambiente
+                    acolhedor e amigável. Quer você esteja procurando um lugar para uma refeição rápida ou deseje
+                    desfrutar de uma refeição descontraída com amigos e familiares, o Wallace Lanches é o lugar ideal.
+                    Nossa equipe atenciosa está sempre pronta para garantir que você tenha uma experiência agradável e
+                    memorável em nossa lanchonete.
+                </p>
+                <p class="card-text"> Se preferir desfrutar dos nossos lanches no conforto da sua casa, oferecemos
+                    serviço de delivery rápido e eficiente. Basta fazer o seu pedido e em breve estaremos levando até
+                    você a satisfação de um delicioso sanduíche do Wallace Lanches.
+
+                </p>
+
+
+                <a href="#" class="btn btn-primary m-1">Faça seu pedido</a>
+                <a routerLink="/login" class="btn btn-primary m-1">Cardápio</a>
+            </div>
+
+        </div>
+
+        <div>
+
+
+
+
+        </div>
+
     </div>
 
 </main>
