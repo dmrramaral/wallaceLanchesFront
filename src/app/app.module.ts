@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './public/login/login.component';
 import { PublicComponent } from './public/public.component';
 import { PublicModule } from './public/public.module';
+import { CadastroComponent } from './public/cadastro/cadastro.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { PublicModule } from './public/public.module';
     PublicComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    
   
     
     

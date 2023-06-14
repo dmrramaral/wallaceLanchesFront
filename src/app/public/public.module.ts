@@ -6,12 +6,14 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { CurrencyBrlPipe } from '../currency-brl.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CardapioComponent } from './cardapio/cardapio.component';
 
 
 @NgModule({
   declarations: [
     CadastroComponent,
     CurrencyBrlPipe,
+    CardapioComponent,
     
   ],
   imports: [
