@@ -7,6 +7,8 @@ import { CurrencyBrlPipe } from '../currency-brl.pipe';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CardapioComponent } from './cardapio/cardapio.component';
+import { SanduicheComponent } from './cardapio/sanduiche/sanduiche.component';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -14,6 +16,10 @@ import { CardapioComponent } from './cardapio/cardapio.component';
     CadastroComponent,
     CurrencyBrlPipe,
     CardapioComponent,
+    SanduicheComponent
+    
+    
+    
     
   ],
   imports: [
@@ -22,6 +28,7 @@ import { CardapioComponent } from './cardapio/cardapio.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    MatTabsModule
     
   ],
   exports: [

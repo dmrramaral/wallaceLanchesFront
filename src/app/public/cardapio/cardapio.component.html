@@ -1,8 +1,17 @@
 <main>
 
     <div class="card-body">
-        
+        <mat-tab-group>
+            <mat-tab id="opcao" label="Sanduiche"> 
+                <app-sanduiche></app-sanduiche>
+            </mat-tab>
+            <mat-tab id="opcao" label="Combo">Combo</mat-tab>
+            <mat-tab id="opcao" label="Bebidas">Bebidas</mat-tab>
+        </mat-tab-group>
+          
+
 
     </div>
 
 </main>
+<router-outlet></router-outlet>

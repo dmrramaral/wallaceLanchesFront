@@ -12,6 +12,8 @@ import { LoginComponent } from './public/login/login.component';
 import { PublicComponent } from './public/public.component';
 import { PublicModule } from './public/public.module';
 import { CadastroComponent } from './public/cadastro/cadastro.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,7 @@ import { CadastroComponent } from './public/cadastro/cadastro.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
+
     
   
     
@@ -31,7 +34,9 @@ import { CadastroComponent } from './public/cadastro/cadastro.component';
     HttpClientModule,
     FormsModule,
     CommonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatTabsModule,
+    BrowserAnimationsModule
     
 
     
