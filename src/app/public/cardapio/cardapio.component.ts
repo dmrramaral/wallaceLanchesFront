@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class CardapioComponent {
 
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+  
+
 }
+
+
+
+
+
+    
