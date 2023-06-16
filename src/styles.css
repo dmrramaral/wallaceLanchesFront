@@ -122,6 +122,14 @@
 
     --bs-nav-pills-link-active-color: #faee03 !important;
     --bs-nav-pills-link-active-bg: #fd290d !important;
+    --bs-nav-pills-link-hover-color: #fd0d0d !important;
+    --bs-nav-pills-link-hover-bg: #faee03 !important;
+    
+}
+
+.nav-pills .nav-link.active,.nav-pills .show>.nav-link {
+    color:#faee03 !important;
+    background-color: #fd0d0d !important;
 }
 
 
