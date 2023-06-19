@@ -17,7 +17,7 @@
             </li>
 
             <li class="nav-item ml-5">
-                <button type="button" class="btn btn-default btn-sm">
+                <button type="button" (click)="onAdd()" class="btn btn-default btn-sm">
                     <i class="fa-solid fa-circle-plus fa-2xl" style="color: #dbdf16;"></i>
                 </button>
 
@@ -33,19 +33,19 @@
 
 
                         <div class="card-body col-12">
-                            <div class="row">
-                                <div class="col-10">
-                                    <h5 class="card-title m-0 col-10"><b>{{sanduiches.nomeSanduiche}}</b></h5>
+                            <div class="row col-12">
+                                <div class="col-9 p-1  ">
+                                    <h5 class="card-title m-0"><b>{{sanduiches.nomeSanduiche}}</b></h5>
                                 </div>
 
-                                <div class="col-2">
+                                <div class="col-3">
                                     <i class="fa-solid fa-xmark fa-lg mx-1" style="color: #fa0505;"></i>
                                     <i class="fa-solid fa-pen-to-square" style="color: #1e69eb;"></i>
                                 </div>
                             </div>
-                            <div class="row col-12">
-                                <p class="card-text m-0">{{ getIngredientesList(sanduiche | async) }}.</p>
-                                <p class="card-text m-0">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
+                            <div class="row col-12 ">
+                                <p class="card-text m-0 p-1">{{ getIngredientesList(sanduiche | async) }}.</p>
+                                <p class="card-text m-0"><b>{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</b></p>
                             </div>
 
 
