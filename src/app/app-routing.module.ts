@@ -10,6 +10,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'cadastro', component: CadastroComponent},
   {path: 'cardapio', component: CardapioComponent},
+  {path: 'admin', loadChildren: () => import('./administrador/administrador-routing/administrador-routing-routing.module').then(m => m.AdministradorRoutingRoutingModule)},
  /*  { path: '', loadChildren: () => import('./public/public.module').then(m => m.PublicModule) },
    */
  /*  { path: 'login', loadChildren: () => import('.public/login/login.module').then(m => m.LoginModule)} */
