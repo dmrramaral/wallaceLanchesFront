@@ -5,6 +5,7 @@
 export const environment = {
     production: false,
     public_api: '/api',
+    administrador_api: '/api',
   
     tempo_validade: 30,
     loader_time_show: 500,

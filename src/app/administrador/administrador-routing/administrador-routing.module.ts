@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AdministradorRoutingRoutingModule } from './administrador-routing-routing.module';
 
 
+
 @NgModule({
   declarations: [],
   imports: [

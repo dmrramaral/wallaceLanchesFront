@@ -15,6 +15,7 @@ import { CadastroComponent } from './public/cadastro/cadastro.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministradorComponent } from './administrador/administrador.component';
+import { ProdutosComponent } from './administrador/produtos/produtos.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AdministradorComponent } from './administrador/administrador.component'
     FooterComponent,
     LoginComponent,
     AdministradorComponent,
+    ProdutosComponent,
 
     
   
