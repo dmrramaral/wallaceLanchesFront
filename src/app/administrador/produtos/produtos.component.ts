@@ -33,5 +33,9 @@ export class ProdutosComponent {
     }
   }
 
+  onAdd() {
+    this.administradorService.adicionar();
+  }
+
 
 }
