@@ -45,14 +45,14 @@
                 <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
             </svg> -->
             <div class="card-body">
-                <p>Promoção</p>
+                <p class="card-text m-0">Promoção</p>
                 <h5 class="card-title">{{sanduiches.nomeSanduiche}}</h5>
                 <p class="card-text mb-0"><b>Ingredientes:</b></p>
                 <p class="card-text mb-0">
                     {{ getIngredientesList(sanduiche | async) }}.
                 </p>
-                <p class="card-text mt-0 mb-0"><b>Valor:</b></p>
-                <p class="card-text">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
+                <p class="card-text m-0"><b>Valor:</b></p>
+                <p class="card-text m-0">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
                 <a id="buttoncard" *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#"
                     class="btn btn-primary mb-1">Peça o seu
                     agora</a>
