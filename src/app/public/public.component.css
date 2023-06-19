@@ -13,12 +13,15 @@
 
 #cards .card p{
     font-size: 10px !important;
+    padding: 5px !important;
 }
 #cards .card h5{
     font-size: 13px !important;
+    padding: 5px !important;
 }
 #cards .card {
     margin-top: 2% !important;
+    padding: 5px !important;
 }
 
 
