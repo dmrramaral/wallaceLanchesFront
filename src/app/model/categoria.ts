@@ -1,0 +1,8 @@
+export enum Categoria {
+    SANDUICHE = "SANDUICHE",
+    BEBIDA = "BEBIDA",
+    SOBREMESA = "SOBREMESA",
+    ACOMPANHAMENTO = "ACOMPANHAMENTO",
+    PROMOCAO = "PROMOCAO",
+    COMBO = "COMBO"
+}

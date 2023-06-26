@@ -37,7 +37,7 @@
 
 
     <div id="cards" class="d-flex flex-wrap justify-content-center ">
-        <div id="promocoes" *ngFor="let sanduiches of sanduiche |async" class="card m-1 col-5 col-sm-4 col-md-3 col-xl-2">
+        <div id="promocoes" *ngFor="let produtos of produto |async" class="card m-1 col-5 col-sm-4 col-md-3 col-xl-2">
             <!--      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
                 role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
                 <title>Placeholder</title>
@@ -46,17 +46,17 @@
             </svg> -->
             <div class="card-body">
                 <p class="card-text m-0">Promoção</p>
-                <h5 class="card-title">{{sanduiches.nomeSanduiche}}</h5>
+                <h5 class="card-title">{{produtos.nome}}</h5>
                 <p class="card-text mb-0"><b>Ingredientes:</b></p>
                 <p class="card-text mb-0">
-                    {{ getIngredientesList(sanduiche | async) }}.
+                    {{ getIngredientesList(produto | async) }}.
                 </p>
                 <p class="card-text m-0"><b>Valor:</b></p>
-                <p class="card-text m-0">{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</p>
-                <a id="buttoncard" *ngIf="sanduiches.valorSanduiche > 0" routerLink="/login" href="#"
+                <p class="card-text m-0">{{produtos.valor.toString() | currency: 'BRL' }}</p>
+                <a id="buttoncard" *ngIf="produtos.valor > 0" routerLink="/login" href="#"
                     class="btn btn-primary mb-1">Peça o seu
                     agora</a>
-                <p *ngIf="sanduiches.valorSanduiche <= 0" class="card-text">Valor indisponível no momento</p>
+                <p *ngIf="produtos.valor <= 0" class="card-text">Valor indisponível no momento</p>
             </div>
         </div>
     </div>

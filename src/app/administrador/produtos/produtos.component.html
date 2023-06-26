@@ -16,6 +16,7 @@
                     type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Bebidas</button>
             </li>
 
+
             <li class="nav-item ml-5">
                 <button type="button" (click)="onAdd()" class="btn btn-default btn-sm">
                     <i class="fa-solid fa-circle-plus fa-2xl" style="color: #dbdf16;"></i>
@@ -24,54 +25,99 @@
             </li>
 
         </ul>
+
+
         <div class="tab-content" id="pills-tabContent">
-            <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab"
-                tabindex="0">
-
-                <div id="cards" class="d-flex justify-content-center flex-wrap">
-                    <div id="sanduiche" *ngFor="let sanduiches of sanduiche | async" class="card m-1">
 
 
+            <!-- Tabela de Sanduiche -->
+            <div class="tab-pane fade" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                <ng-container *ngFor="let produtos of produto | async">
+                    <div id="sanduiche" *ngIf="produtos.categoria =='SANDUICHE'" class="card m-1">
                         <div class="card-body col-12">
                             <div class="row col-12">
-                                <div class="col-9 p-1  ">
-                                    <h5 class="card-title m-0"><b>{{sanduiches.nomeSanduiche}}</b></h5>
+                                <div class="col-8 p-1">
+                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
                                 </div>
-
-                                <div class="col-3">
-                                    <i class="fa-solid fa-xmark fa-lg mx-1" style="color: #fa0505;"></i>
-                                    <i class="fa-solid fa-pen-to-square" style="color: #1e69eb;"></i>
+                                <div class="col-4">
+                                    <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-xmark fa-lg mx-1" style="color: #fa0505;"></i></button>
+                                    <button type="button" (click)="onEdit()" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-pen-to-square" style="color: #1e69eb;"></i></button>
                                 </div>
                             </div>
-                            <div class="row col-12 ">
-                                <p class="card-text m-0 p-1">{{ getIngredientesList(sanduiche | async) }}.</p>
-                                <p class="card-text m-0"><b>{{sanduiches.valorSanduiche.toString() | currency: 'BRL' }}</b></p>
+                            <div class="row col-12">
+                                <p class="card-text m-0 p-1">{{ getIngredientesList(produtos) }}.</p>
+                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
                             </div>
-
-
                         </div>
-
-
-
                     </div>
-
-
-
-                </div>
-
-
-
+                </ng-container>
             </div>
 
 
 
+            <!-- Tabela de Combos -->
+            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"
+                tabindex="0">
+                <ng-container *ngFor="let produtos of produto | async">
+                    <div id="sanduiche" *ngIf="produtos.categoria =='COMBO' || produtos.categoria =='PROMOCAO'"
+                        class="card m-1">
+                        <div class="card-body col-12">
+                            <div class="row col-12">
+                                <div class="col-8 p-1">
+                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-xmark fa-lg mx-1" style="color: #fa0505;"></i></button>
+                                    <button type="button" (click)="onEdit()" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-pen-to-square" style="color: #1e69eb;"></i></button>
+                                </div>
+                            </div>
+                            <div class="row col-12">
+
+                                <div class="card-text m-0" *ngIf="produtos.ingredientes">
+                                    <p class="card-text m-0">{{ produtos.descricao }}</p>
+                                </div>
+                                <div class="card-text m-0" *ngIf="produtos.ingredientes">
+                                    <p class="card-text m-0">{{ getIngredientesList(produtos) }}</p>
+                                </div>
+                              
+                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
 
 
+            <!-- Tabela de Bebidas -->
+            <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab"
+                tabindex="0">
+                <ng-container *ngFor="let produtos of produto | async">
+                    <div id="sanduiche" *ngIf="produtos.categoria =='BEBIDA'" class="card m-1">
+                        <div class="card-body col-12">
+                            <div class="row col-12">
+                                <div class="col-8 p-1">
+                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                                </div>
+                                <div class="col-4">
+                                    <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-xmark fa-lg mx-1" style="color: #fa0505;"></i></button>
+                                    <button type="button" (click)="onEdit()" class="btn btn-default btn-sm"><i
+                                            class="fa-solid fa-pen-to-square" style="color: #1e69eb;"></i></button>
+                                </div>
+                            </div>
+                            <div class="row col-12">
+                                <p class="card-text m-0 p-1">{{ getIngredientesList(produtos) }}.</p>
+                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+            </div>
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
-            Tabela 1</div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
-            Tabela 2</div>
 
     </div>
 

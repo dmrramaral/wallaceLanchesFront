@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { AdministradorComponent } from '../administrador.component';
-import { AdministradorService } from '../administrador.service';
-import { Sanduiche } from 'src/app/model/sanduiche';
 import { Observable } from 'rxjs';
+import { Produto } from 'src/app/model/produto';
+import { AdministradorService } from '../administrador.service';
 
 @Component({
   selector: 'app-produtos',
@@ -12,30 +11,44 @@ import { Observable } from 'rxjs';
 })
 export class ProdutosComponent {
 
-  sanduiche: Observable<Sanduiche[]>;
+  produto: Observable<Produto[]>;
 
   constructor(private administradorService: AdministradorService) {
-    this.sanduiche = this.administradorService.listar();
+    this.produto = this.administradorService.listar();
   }
 
-  getIngredientesList(ingredientes: Sanduiche[] | null): String | undefined {
-    if (ingredientes === null) {
+
+
+  getIngredientesList(produtos: Produto | null): string | undefined {
+    if (produtos === null) {
       return undefined;
     }
 
-    const nomesIngredientes = ingredientes[0].ingredientes.map((ingrediente) => ingrediente.nomeIngrediente);
+    const nomesIngredientes = produtos.ingredientes.map((ingrediente) => ingrediente.nomeIngrediente);
     const ultimoIngrediente = nomesIngredientes.pop();
 
     if (nomesIngredientes.length > 0) {
       return nomesIngredientes.join(', ') + ' e ' + ultimoIngrediente;
     } else {
-      return ultimoIngrediente;
+      return ultimoIngrediente?.toString();
     }
   }
 
   onAdd() {
-    this.administradorService.adicionar();
+    alert('Adicionado com sucesso!');
   }
+
+  onRemove(produto: Produto) {
+    this.administradorService.remover(produto.id).subscribe();
+    alert('Removido com sucesso!');
+    console.log(produto.id);
+    return this.administradorService.listar();
+  }
+
+  onEdit() {
+    alert('Editado com sucesso!');
+  }
+
 
 
 }

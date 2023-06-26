@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
-import { Sanduiche } from '../model/sanduiche';
+import { Observable, take } from 'rxjs';
+import { Produto } from '../model/produto';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environments';
 
@@ -12,15 +12,15 @@ export class AdministradorService {
 
   constructor(private http: HttpClient) { }
 
-  listar(): Observable<Sanduiche[]> {
-    return this.http.get<Sanduiche[]>(`${environment.administrador_api}/sanduiche`);
+  listar(): Observable<Produto[]> {
+    return this.http.get<Produto[]>(`${environment.administrador_api}/produto`).pipe(take(1));
   }
 
-  adicionar(): Observable<Sanduiche[]> {
-    return this.http.post<Sanduiche[]>(`${environment.administrador_api}/sanduiche`, {});
+  adicionar(): Observable<Produto[]> {
+    return this.http.post<Produto[]>(`${environment.administrador_api}/produto`, {});
   }
 
-  remover(id: number): Observable<Sanduiche[]> {
-    return this.http.delete<Sanduiche[]>(`${environment.administrador_api}/sanduiche/${id}`);
+  remover(id: Number): Observable<Produto[]> {
+    return this.http.delete<Produto[]>(`${environment.administrador_api}/produto/${id}`).pipe(take(1));
   }
 }

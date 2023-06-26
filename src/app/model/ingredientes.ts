@@ -1,6 +1,7 @@
 import { TipoIngrediente } from "./tipoIngrediente";
 
 export class Ingredientes{
+   
     public id: Number;
     public nomeIngrediente: String;
     public TipoIngrediente: TipoIngrediente;

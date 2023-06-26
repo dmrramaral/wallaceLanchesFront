@@ -3,14 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { LoginComponent } from './login/login.component';
 import { CardapioComponent } from './cardapio/cardapio.component';
-import { Sanduiche } from '../model/sanduiche';
+import { Produto } from '../model/produto';
 
 const routes: Routes = [
   { path: '', loadChildren: () => import('./public.module').then(m => m.PublicModule) },
   { path: '/login', component: LoginComponent },
   { path: '/cadastro', component: CadastroComponent },
   { path: '/cardapio', component: CardapioComponent, children: [
-    { path: '/sanduiche', component: Sanduiche }
+    { path: '/sanduiche', component: Produto }
   ] }
 
 ];

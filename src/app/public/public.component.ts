@@ -1,7 +1,9 @@
+
+import { PublicService } from './public.service';
+import { Ingredientes } from '../model/ingredientes';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Sanduiche } from '../model/sanduiche';
-import { PublicService } from './public.service';
+import { Produto } from '../model/produto';
 
 @Component({
   selector: 'app-public',
@@ -9,18 +11,18 @@ import { PublicService } from './public.service';
   styleUrls: ['./public.component.css']
 })
 export class PublicComponent implements OnInit {
-  sanduiche:   Observable<Sanduiche[]>;
-  
+  produto:   Observable<Produto[]>;
+ 
 
 
   constructor( private publicService : PublicService) { 
-    this.sanduiche = this.publicService.listar();
+    this.produto = this.publicService.listar();
   }
   ngOnInit(): void {
     
   }
 
-  getIngredientesList(ingredientes: Sanduiche[] | null): String | undefined {
+  getIngredientesList(ingredientes: Produto[] | null): String | undefined {
     if (ingredientes === null) {
       return undefined;
     }
