@@ -1,4 +1,5 @@
-import { TipoIngrediente } from "./TipoIngrediente";
+import { TipoIngrediente } from "./tipoIngrediente";
+
 
 
 export interface Ingredientes{
