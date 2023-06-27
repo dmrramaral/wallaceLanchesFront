@@ -1,12 +1,12 @@
 
-export class Cliente {
-    constructor(){}
+export interface Cliente {
     
-    public nome : String | undefined;
-    public telefone : String | undefined;
-    public cpf : String | undefined;
-    public email : String | undefined;
-    public password : String | undefined;
+    
+    nome : String | undefined;
+    telefone : String | undefined;
+    cpf : String | undefined;
+    email : String | undefined;
+    password : String | undefined;
 
  
 

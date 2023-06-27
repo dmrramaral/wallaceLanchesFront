@@ -15,6 +15,7 @@ export class ProdutosComponent {
 
   constructor(private administradorService: AdministradorService) {
     this.produto = this.administradorService.listar();
+    console.log(this.produto);
   }
 
 

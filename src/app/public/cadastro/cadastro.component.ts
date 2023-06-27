@@ -13,13 +13,13 @@ export class CadastroComponent implements OnInit {
 
    cadastroForm!: FormGroup;
 
-  private cliente: Cliente;
+  private cliente!: Cliente;
 
   constructor(
     private formBuilder: FormBuilder,
     private cadastroService: CadastroService,
   ) { 
-    this.cliente = new Cliente();
+    
     
     
   }

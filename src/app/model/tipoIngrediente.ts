@@ -1,12 +1,8 @@
-export class TipoIngrediente {
+export interface TipoIngrediente {
 
-    public id: Number;
-    public nomeTipoIngrediente: String;
+     id: Number;
+     nomeTipoIngrediente: String;
 
-    constructor(id: Number, nomeTipoIngrediente: String) {
-        this.id = id;
-        this.nomeTipoIngrediente = nomeTipoIngrediente;
-    }
 
 
 }

@@ -1,16 +1,12 @@
-import { TipoIngrediente } from "./tipoIngrediente";
+import { TipoIngrediente } from "./TipoIngrediente";
 
-export class Ingredientes{
+
+export interface Ingredientes{
    
-    public id: Number;
-    public nomeIngrediente: String;
-    public TipoIngrediente: TipoIngrediente;
+    id: Number;
+    nomeIngrediente: String;
+    TipoIngrediente: TipoIngrediente;
 
-    constructor(id: Number, nomeIngrediente: String, TipoIngrediente: TipoIngrediente){
-        this.id = id;
-        this.nomeIngrediente = nomeIngrediente;
-        this.TipoIngrediente = TipoIngrediente;
-    }
 
 
 }

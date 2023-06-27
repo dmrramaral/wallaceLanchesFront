@@ -9,9 +9,7 @@ const routes: Routes = [
   { path: '', loadChildren: () => import('./public.module').then(m => m.PublicModule) },
   { path: '/login', component: LoginComponent },
   { path: '/cadastro', component: CadastroComponent },
-  { path: '/cardapio', component: CardapioComponent, children: [
-    { path: '/sanduiche', component: Produto }
-  ] }
+  { path: '/cardapio', component: CardapioComponent }
 
 ];
 
