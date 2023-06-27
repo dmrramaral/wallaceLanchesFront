@@ -10,11 +10,10 @@ import { AdministradorService } from './administrador.service';
 })
 export class AdministradorComponent  {
   
-  produto: Observable<Produto[]>;
+  
 
-  constructor(administradorService: AdministradorService) {
-    this.produto = administradorService.listar();
-    console.log(alert('Listado com sucesso!'));
+  constructor() {
+    
  
   }
     

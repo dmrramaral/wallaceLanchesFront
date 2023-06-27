@@ -6,7 +6,9 @@ import { AdministradorRoutingRoutingModule } from './administrador-routing-routi
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    
+  ],
   imports: [
     CommonModule,
     AdministradorRoutingRoutingModule

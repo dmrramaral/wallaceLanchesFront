@@ -12,10 +12,11 @@ import { LoginComponent } from './public/login/login.component';
 import { PublicComponent } from './public/public.component';
 import { PublicModule } from './public/public.module';
 import { CadastroComponent } from './public/cadastro/cadastro.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { ProdutosComponent } from './administrador/produtos/produtos.component';
+import { CadastrarProdutosComponent } from './administrador/produtos/cadastrar-produtos/cadastrar-produtos.component';
 
 @NgModule({
   declarations: [
@@ -26,10 +27,7 @@ import { ProdutosComponent } from './administrador/produtos/produtos.component';
     LoginComponent,
     AdministradorComponent,
     ProdutosComponent,
-
-    
-  
-    
+    CadastrarProdutosComponent,
     
   ],
   imports: [
@@ -41,10 +39,10 @@ import { ProdutosComponent } from './administrador/produtos/produtos.component';
     ReactiveFormsModule,
     MatTabsModule,
     BrowserAnimationsModule
-    
 
-    
-    
+
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]

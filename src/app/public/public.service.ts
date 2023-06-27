@@ -17,7 +17,7 @@ export class PublicService {
   
 
   listar() : Observable<Produto[]> {
-    return this.httpClient.get<Produto[]>(`${environment.public_api}/produto`).pipe(take(1));;
+    return this.httpClient.get<Produto[]>(`${environment.public_api}/produto`).pipe(take(1));
     
   }
 

@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Produto } from 'src/app/model/produto';
-import { AdministradorService } from '../administrador.service';
+import { ProdutosService } from './produtos.service';
 
 @Component({
   selector: 'app-produtos',
@@ -9,13 +9,16 @@ import { AdministradorService } from '../administrador.service';
   styleUrls: ['./produtos.component.css']
 
 })
-export class ProdutosComponent {
+export class ProdutosComponent implements OnInit{
 
   produto: Observable<Produto[]>;
 
-  constructor(private administradorService: AdministradorService) {
-    this.produto = this.administradorService.listar();
-    console.log(this.produto);
+  constructor(private produtoService: ProdutosService) {
+    this.produto = this.produtoService.listar();
+   
+  }
+  ngOnInit(): void {
+    this.produto = this.produtoService.listar();
   }
 
 
@@ -40,15 +43,18 @@ export class ProdutosComponent {
   }
 
   onRemove(produto: Produto) {
-    this.administradorService.remover(produto.id).subscribe();
+    this.produtoService.remover(produto).subscribe();
     alert('Removido com sucesso!');
-    console.log(produto.id);
-    return this.administradorService.listar();
+   
+    
+    return this.produto = this.produtoService.listar();
   }
 
   onEdit() {
     alert('Editado com sucesso!');
   }
+
+ 
 
 
 

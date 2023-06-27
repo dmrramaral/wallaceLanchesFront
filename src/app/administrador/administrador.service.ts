@@ -10,17 +10,18 @@ import { environment } from 'src/environments/environments';
 export class AdministradorService {
   
 
-  constructor(private http: HttpClient) { }
+  constructor(private httpClient: HttpClient) { }
 
-  listar(): Observable<Produto[]> {
-    return this.http.get<Produto[]>(`${environment.administrador_api}/produto`).pipe(take(1));
+  listar() : Observable<Produto[]> {
+    return this.httpClient.get<Produto[]>(`${environment.public_api}/produto`).pipe(take(1));
+    
   }
 
   adicionar(): Observable<Produto[]> {
-    return this.http.post<Produto[]>(`${environment.administrador_api}/produto`, {});
+    return this.httpClient.post<Produto[]>(`${environment.administrador_api}/produto`, {});
   }
 
   remover(id: Number): Observable<Produto[]> {
-    return this.http.delete<Produto[]>(`${environment.administrador_api}/produto/${id}`).pipe(take(1));
+    return this.httpClient.delete<Produto[]>(`${environment.administrador_api}/produto/${id}`).pipe(take(1));
   }
 }
