@@ -26,6 +26,14 @@ export class ProdutosService {
     return this.httpClient.delete<Produto[]>(`${environment.administrador_api}/produto/${produto.id}`).pipe(take(1));
   }
 
+  atualizar(produto: Produto): Observable<Produto[]> {
+    return this.httpClient.put<Produto[]>(`${environment.administrador_api}/produto/${produto.id}`, produto);
+  }
+
+  buscarPorId(id: number): Observable<Produto> {
+    return this.httpClient.get<Produto>(`${environment.administrador_api}/produto/${id}`).pipe(take(1));
+  }
+
   listarIngredientes(): Observable<Ingredientes[]> {
     return this.httpClient.get<Ingredientes[]>(`${environment.administrador_api}/ingredientes`).pipe(take(1));
   }

@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { ProdutosService } from '../produtos.service';
-import { Produto } from 'src/app/model/produto';
-import { Observable, switchMap } from 'rxjs';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Observable } from 'rxjs';
 import { Ingredientes } from 'src/app/model/ingredientes';
+import { Produto } from 'src/app/model/produto';
+import { ProdutosService } from '../produtos.service';
 
 @Component({
   selector: 'app-cadastrar-produtos',
@@ -14,9 +15,33 @@ export class CadastrarProdutosComponent {
   registroForm!: FormGroup;
   listarIngredientes: Observable<Ingredientes[]>;
   ingredientes: Ingredientes[] = [];
+  produtoId : number | null = null;
 
-  constructor(private produtosService: ProdutosService, private formBuilder: FormBuilder) {
+  constructor(private produtosService: ProdutosService, private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) {
     this.listarIngredientes = this.produtosService.listarIngredientes();
+
+    this.route.queryParams.subscribe(params => {
+      this.produtoId = params['id']; // Obtém o ID do produto da query parameter 'id'
+      
+      if (this.produtoId) {
+        // Aqui você pode buscar os dados do produto pelo ID e preencher os campos do formulário de edição
+        this.produtosService.buscarPorId(this.produtoId).subscribe((produto) => {
+          this.registroForm = this.formBuilder.group({
+            nome: produto.nome,
+            descricao: produto.descricao,
+            valor: produto.valor,
+            categoria: produto.categoria,
+            ingredientes: produto.ingredientes
+          });
+        }, (error) => {
+          alert('Erro ao buscar produto por ID');
+        }
+        );
+      }
+    });
+
+
+
   }
 
   ngOnInit(): void {
@@ -36,17 +61,30 @@ export class CadastrarProdutosComponent {
   onAdd(): void {
     const produto: Produto = this.registroForm.value;
     /* Condição pra que se os ingredientes não tiverem selecionado nenhum ele retornar array 0 */
-    if (produto.ingredientes[0] == null) {
+
+
+    if (produto.categoria != 'SANDUICHE') {
       produto.ingredientes = [];
     }else{
       this.ingredientes = this.ingredientes;
     }
 
-
+    if (this.produtoId) {
+      produto.id = this.produtoId;
+      this.produtosService.atualizar(produto).subscribe(() => {
+        alert('O '+produto.nome + produto.ingredientes+ 'foi atualizado com sucesso!');
+        this.router.navigate(['/admin/produtos']);
+      });
+      return;
+    }
+    
     console.log(produto);
     this.produtosService.adicionar(produto).subscribe(() => {
       alert('Produto cadastrado com sucesso!');
     });
+
+    this.router.navigate(['/admin/produtos']);
+    
   }
 }
 
