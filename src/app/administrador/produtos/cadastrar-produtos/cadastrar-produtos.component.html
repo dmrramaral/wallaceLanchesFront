@@ -20,26 +20,28 @@
 
             <div>
                 <select formControlName="categoria" class="form-select" aria-label="Default select example">
-                    <option selected>Selecione o Tipo</option>
-                    <option value="0">Sanduiche</option>
-                    <option value="1">Bebida</option>
-                    <option value="2">Sobremesa</option>
-                    <option value="3">Acompanhamento</option>
-                    <option value="4">Promoção</option>
-                    <option value="5">Combo</option>
+                    <option value="SANDUICHE">Sanduiche</option>
+                    <option value="BEBIDA">Bebida</option>
+                    <option value="SOBREMESA">Sobremesa</option>
+                    <option value="ACOMPANHAMENTO">Acompanhamento</option>
+                    <option value="PROMOCAO">Promoção</option>
+                    <option value="COMBO">Combo</option>
 
                 </select>
 
             </div>
 
         </div>
-        <div class="mb-3" *ngIf="registroForm.get('categoria')?.value == '0'">
+        <div class="mb-3" *ngIf="registroForm.get('categoria')?.value == 'SANDUICHE'">
             <label for="exampleFormControlTextarea1" class="form-label">Ingrediente</label>
             <select formControlName="ingredientes" class="form-select" multiple aria-label="multiple select example">
-                <option *ngFor="let ingrediente of ingredientes | async" [value]="ingrediente.id">{{
-                    ingrediente.nomeIngrediente }}</option>
+                <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id"
+                    (change)="adicionarIngrediente(ingrediente)">
+                    {{ ingrediente.nomeIngrediente }}
+                </option>
             </select>
         </div>
+
 
         <button type="button" (click)="onAdd()" class="btn btn-primary">Cadastrar</button>
     </div>

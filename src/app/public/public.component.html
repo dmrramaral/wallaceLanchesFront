@@ -37,28 +37,25 @@
 
 
     <div id="cards" class="d-flex flex-wrap justify-content-center ">
-        <div id="promocoes" *ngFor="let produtos of produto |async" class="card m-1 col-5 col-sm-4 col-md-3 col-xl-2">
-            <!--      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
-                role="img" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" focusable="false">
-                <title>Placeholder</title>
-                <rect width="100%" height="100%" fill="#868e96"></rect>
-                <text x="50%" y="50%" fill="#dee2e6" dy=".3em">Sanduiche</text>
-            </svg> -->
-            <div class="card-body">
-                <p class="card-text m-0">Promoção</p>
-                <h5 class="card-title">{{produtos.nome}}</h5>
-                <p class="card-text mb-0"><b>Ingredientes:</b></p>
-                <p class="card-text mb-0">
-                    {{ getIngredientesList(produtos) }}.
-                </p>
-                <p class="card-text m-0"><b>Valor:</b></p>
-                <p class="card-text m-0">{{produtos.valor.toString() | currency: 'BRL' }}</p>
-                <a id="buttoncard" *ngIf="produtos.valor > 0" routerLink="/login" href="#"
-                    class="btn btn-primary mb-1">Peça o seu
-                    agora</a>
-                <p *ngIf="produtos.valor <= 0" class="card-text">Valor indisponível no momento</p>
+
+        <ng-container *ngFor="let produtos of produto | async">
+            <div id="sanduiche" *ngIf="produtos.categoria =='PROMOCAO'"
+                class="card m-1 col-5 col-sm-4 col-md-3 col-xl-2">
+                <div class="card-body col-12">
+                    <div class="row col-12">
+                        <div class="col-8 p-1">
+                            <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                        </div>
+
+                    </div>
+                    <div class="row col-12">
+                        <p class="card-text m-0"><b>{{produtos.descricao }}</b></p>
+                        <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                    </div>
+                </div>
             </div>
-        </div>
+        </ng-container>
+
     </div>
 
 

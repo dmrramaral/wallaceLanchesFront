@@ -12,11 +12,13 @@ import { Ingredientes } from 'src/app/model/ingredientes';
 })
 export class CadastrarProdutosComponent {
   registroForm!: FormGroup;
-  ingredientes : Observable<Ingredientes[]>
+  ingredientes : Ingredientes[] = [];
 
   constructor(private produtosService: ProdutosService, private formBuilder: FormBuilder) {
-    this.ingredientes = this.produtosService.listarIngredientes();
-   }
+    this.produtosService.listarIngredientes().subscribe((ingredientes: Ingredientes[]) => {
+      this.ingredientes = ingredientes;
+    });
+  }
 
   ngOnInit(): void {
     this.criarFormulario();
@@ -28,15 +30,31 @@ export class CadastrarProdutosComponent {
       descricao: '',
       valor: 0,
       categoria: '',
-      ingredientes: ''
+      ingredientes: []
     });
   }
 
   onAdd(): void {
     const produto: Produto = this.registroForm.value;
+    produto.ingredientes = this.ingredientes
+    console.log(produto);
+
     this.produtosService.adicionar(produto).subscribe(() => {
       alert('Produto adicionado com sucesso!');
       // Redirecionar ou executar outras ações após adicionar o produto
     });
+  }
+
+  adicionarIngrediente(ingrediente: Ingredientes): void {
+    const ingredientesControl = this.registroForm.get('ingredientes');
+    if (ingredientesControl) {
+      const selectedIngredients = ingredientesControl.value || [];
+      const updatedIngredients = selectedIngredients.filter((id: any) => id !== ingrediente.id);
+      ingredientesControl.setValue(updatedIngredients);
+    }
+  }
+
+  removerIngrediente(ingrediente: Ingredientes): void {
+    this.ingredientes = this.ingredientes.filter(item => item.id !== ingrediente.id);
   }
 }
