@@ -1,6 +1,6 @@
 <form [formGroup]="registroForm" (ngSubmit)="onAdd()" class="card m-1 p-1">
     <div class="container">
-        <div class="card-title">Cadastre um Produto</div>
+        <div class="card-title">Produto</div>
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Nome</label>
             <input formControlName="nome" type="text" class="form-control" id="exampleFormControlInput1"
@@ -32,18 +32,15 @@
             </div>
 
         </div>
-        <div class="mb-3" *ngIf="registroForm.get('categoria')?.value == 'SANDUICHE'">
-            <label for="exampleFormControlTextarea1" class="form-label">Ingrediente</label>
+       <div class="mb-3" *ngIf="registroForm.get('categoria')?.value == 'SANDUICHE'">
             <select formControlName="ingredientes" class="form-select" multiple aria-label="multiple select example">
-                <option *ngFor="let ingrediente of ingredientes" [value]="ingrediente.id"
-                    (change)="adicionarIngrediente(ingrediente)">
-                    {{ ingrediente.nomeIngrediente }}
-                </option>
+               <option *ngFor="let ingrediente of listarIngredientes | async" [value]="ingrediente">{{ingrediente.nomeIngrediente}}</option>
+                
             </select>
         </div>
 
 
-        <button type="button" (click)="onAdd()" class="btn btn-primary">Cadastrar</button>
+        <button type="button" (click)="onAdd()" class="btn btn-primary">Salvar</button>
     </div>
 
 </form>
