@@ -150,10 +150,26 @@ body {
 
 html,
 body {
-    height: 100%;
+    position: relative;
+    min-height: 100vh;
 }
 
 body {
     margin: 0;
     font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+main {
+    /* Defina a altura do conteúdo principal da página, isso pode variar dependendo do seu layout */
+    min-height: calc(100vh - (2rem + 1rem)); /* Subtrai a altura do header e padding do footer */
+}
+
+footer {
+    position: inherit;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #ca0f0fe5;
+    padding: 1rem 2rem;
+    text-align: center;
 }
