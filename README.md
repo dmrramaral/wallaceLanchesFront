@@ -1,5 +1,23 @@
 # WallaceLanchesFront
 
+# Projeto para criação de site para pedidos da empresa
+1- Páginas criadas da área de administrador
+2- Criação de rodapé
+3- Criação de cabeçalho
+
+# Funcionalidades
+1 - Telas de cadastro (Cadastrando usuário)
+2 - Tela de Login
+3 - Tela de Administrador(com CRUD)
+
+
+# Próximas Correções
+1 - Melhorar mensagens de ação do CRUD
+2 - 
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
 
 ## Development server
