@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Produto } from 'src/app/model/produto';
 import { ProdutosService } from './produtos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -13,7 +14,7 @@ export class ProdutosComponent implements OnInit{
 
   produto: Observable<Produto[]>;
 
-  constructor(private produtoService: ProdutosService) {
+  constructor(private produtoService: ProdutosService, private router : Router) {
     this.produto = this.produtoService.listar();
    
   }
@@ -50,8 +51,10 @@ export class ProdutosComponent implements OnInit{
     return this.produto = this.produtoService.listar();
   }
 
-  onEdit() {
-    alert('Editado com sucesso!');
+  onEdit(produto: Produto) {
+    // Navega para a página de cadastro com o ID do produto como parâmetro
+    this.router.navigate(['/admin/cadastrar-produtos'], { queryParams: {id: produto.id, edit: true } });
+  
   }
 
  

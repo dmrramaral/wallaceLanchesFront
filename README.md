@@ -1,27 +1,32 @@
 # WallaceLanchesFront
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.7.
+## Projeto para criação de site para pedidos da empresa
+1. Páginas criadas da área de administrador
+2. Criação de rodapé
+3. Criação de cabeçalho
+
+## :hammer: Funcionalidades do projeto
+1. Telas de cadastro (Cadastrando usuário)
+2. Tela de Login
+3. Tela de Administrador(com CRUD)
+
+
+## Próximas Melhorias
+1. Melhorar mensagens de ação do CRUD
+2. Corrigir o Cadastro pois está mandando no HTML todos os dados
+3. Ajustar responsividade
+4. No editar fazer com que os campos que já estavam selecionados carregar corretamente
+
+
+## ✔️ Técnicas e tecnologias utilizadas
+- ``Angular 15``
+- ``BootStrap``
+- ``VS Code``
+
+
+
+
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
