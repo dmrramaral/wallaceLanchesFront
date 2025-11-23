@@ -1,30 +1,210 @@
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    color: white;
+    padding: 80px 0;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+}
 
-#carouselExampleIndicators{
-   
+.hero-content {
+    padding: 20px;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    opacity: 0.95;
+}
+
+.hero-buttons .btn {
+    padding: 12px 32px;
+    font-size: 1.1rem;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.hero-buttons .btn-primary {
+    background-color: var(--bs-warning);
+    border-color: var(--bs-warning);
+    color: var(--bs-dark);
+    font-weight: 600;
+}
+
+.hero-buttons .btn-primary:hover {
+    background-color: #ffcd39;
+    border-color: #ffcd39;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(var(--bs-warning-rgb), 0.4);
+}
+
+.hero-buttons .btn-outline-light {
+    border: 2px solid white;
+    color: white;
+    font-weight: 600;
+}
+
+.hero-buttons .btn-outline-light:hover {
+    background-color: white;
+    color: #dc3545;
+    transform: translateY(-2px);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* Promoções Section */
+.promocoes-section {
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 2rem;
+}
+
+.promo-card {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    height: 100%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+}
+
+.promo-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.promo-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #212529;
+    margin-bottom: 12px;
+}
+
+.promo-card-description {
+    font-size: 0.95rem;
+    color: #6c757d;
+    margin-bottom: 16px;
+}
+
+.promo-card-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #dc3545;
+    margin: 0;
+}
+
+/* Sobre Section */
+.sobre-section {
+    background-color: white;
+}
+
+.sobre-card {
+    background: white;
+    border-radius: 16px;
+    padding: 48px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.sobre-card h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #212529;
+}
+
+.sobre-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #495057;
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 991px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
     
-    justify-content: space-around !important;
- 
-}
-
-
-
-#cards .card p{
-    font-size: 10px !important;
-    padding: 0px !important;
-    margin: 0px !important;
-}
-#cards .card h5{
-    font-size: 13px !important;
-    padding: 0px !important;
-    margin: 0px !important;
-}
-
-/* Diminuir a fonte do id id="buttoncard" se a tela for de smartphone */
-@media screen and (max-width: 600px) {
-    #buttoncard {
-        font-size: 10px;
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .hero-section {
+        padding: 60px 0;
+        min-height: 400px;
+    }
+    
+    .hero-image {
+        margin-top: 30px;
+        text-align: center;
     }
 }
 
+@media (max-width: 767px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .hero-buttons .btn {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    
+    .sobre-card {
+        padding: 32px 24px;
+    }
+    
+    .sobre-card h2 {
+        font-size: 2rem;
+    }
+    
+    .sobre-content p {
+        font-size: 1rem;
+    }
+}
 
-
+@media (max-width: 576px) {
+    .hero-section {
+        padding: 40px 0;
+        min-height: 350px;
+    }
+    
+    .promo-card {
+        padding: 20px;
+    }
+    
+    .promo-card-title {
+        font-size: 1.1rem;
+    }
+    
+    .promo-card-description {
+        font-size: 0.9rem;
+    }
+}
