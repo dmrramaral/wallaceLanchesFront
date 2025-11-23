@@ -33,9 +33,9 @@
 }
 
 .hero-buttons .btn-primary {
-    background-color: #ffc107;
-    border-color: #ffc107;
-    color: #212529;
+    background-color: var(--bs-warning);
+    border-color: var(--bs-warning);
+    color: var(--bs-dark);
     font-weight: 600;
 }
 
@@ -43,7 +43,7 @@
     background-color: #ffcd39;
     border-color: #ffcd39;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.4);
+    box-shadow: 0 4px 12px rgba(var(--bs-warning-rgb), 0.4);
 }
 
 .hero-buttons .btn-outline-light {
