@@ -16,7 +16,7 @@ export class CadastrarProdutosComponent {
   registroForm!: FormGroup;
   listarIngredientes: Observable<Ingredientes[]>;
   ingredientes: Ingredientes[] = [];
-  produtoId : number | null = null;
+  produtoId : string | null = null;
 
   constructor(private produtosService: ProdutosService, private formBuilder: FormBuilder, private route: ActivatedRoute, private router: Router) {
     this.listarIngredientes = this.produtosService.listarIngredientes();
@@ -28,11 +28,11 @@ export class CadastrarProdutosComponent {
         // Aqui você pode buscar os dados do produto pelo ID e preencher os campos do formulário de edição
         this.produtosService.buscarPorId(this.produtoId).subscribe((produto) => {
           this.registroForm = this.formBuilder.group({
-            nome: produto.nome,
-            descricao: produto.descricao,
-            valor: produto.valor,
-            categoria: produto.categoria,
-            ingredientes: produto.ingredientes
+            nome: produto.nome || produto.name,
+            descricao: produto.descricao || produto.description,
+            valor: produto.valor || produto.price,
+            categoria: produto.categoria || produto.category,
+            ingredientes: produto.ingredientes || produto.ingredients
           });
         }, (error) => {
           alert('Erro ao buscar produto por ID');
@@ -71,7 +71,8 @@ export class CadastrarProdutosComponent {
     }
 
     if (this.produtoId) {
-      produto.id = this.produtoId;
+      produto._id = this.produtoId;
+      produto.id = this.produtoId as any;
       this.produtosService.atualizar(produto).subscribe(() => {
         alert('O '+produto.nome + produto.ingredientes+ 'foi atualizado com sucesso!');
         this.router.navigate(['/admin/produtos']);
