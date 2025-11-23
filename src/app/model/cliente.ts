@@ -1,15 +1,15 @@
 
 export interface Cliente {
-    
-    
-    nome : String | undefined;
-    telefone : String | undefined;
-    cpf : String | undefined;
-    email : String | undefined;
-    password : String | undefined;
-
- 
-
- 
-
+    _id?: string; // MongoDB ID
+    nome?: String | undefined;
+    name?: string; // Backend uses 'name'
+    telefone?: String | undefined;
+    phone?: string; // Backend uses 'phone'
+    cpf?: String | undefined;
+    email?: String | undefined;
+    password?: String | undefined;
+    role?: string; // Backend includes role
+    isAdmin?: boolean;
+    createdAt?: string;
+    updatedAt?: string;
 }

@@ -191,4 +191,17 @@ export class AuthService {
         })
       );
   }
+
+  /**
+   * Obtém os dados do usuário autenticado do backend
+   */
+  getCurrentUserFromBackend(): Observable<any> {
+    return this.http.get(`${environment.public_api}/auth/me`)
+      .pipe(
+        tap(user => {
+          this.setUser(user);
+          this.currentUserSubject.next(user);
+        })
+      );
+  }
 }

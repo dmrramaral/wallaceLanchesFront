@@ -27,12 +27,12 @@
             <h2 class="section-title text-center mb-4">Promoções Especiais</h2>
             <div class="row g-4">
                 <ng-container *ngFor="let produtos of produto | async">
-                    <div *ngIf="produtos.categoria =='PROMOCAO'" class="col-12 col-sm-6 col-md-4 col-lg-3">
+                    <div *ngIf="getCategoria(produtos) =='PROMOCAO'" class="col-12 col-sm-6 col-md-4 col-lg-3">
                         <div class="promo-card">
                             <div class="promo-card-body">
-                                <h5 class="promo-card-title">{{produtos.nome}}</h5>
-                                <p class="promo-card-description">{{produtos.descricao}}</p>
-                                <p class="promo-card-price">{{produtos.valor.toString() | currency: 'BRL'}}</p>
+                                <h5 class="promo-card-title">{{getNome(produtos)}}</h5>
+                                <p class="promo-card-description">{{getDescricao(produtos)}}</p>
+                                <p class="promo-card-price">{{getValor(produtos) | currency: 'BRL'}}</p>
                             </div>
                         </div>
                     </div>
