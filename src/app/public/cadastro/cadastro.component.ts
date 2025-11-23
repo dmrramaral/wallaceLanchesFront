@@ -4,10 +4,11 @@ import { Cliente } from 'src/app/model/cliente';
 import { CadastroService } from './cadastro.service';
 
 @Component({
-  selector: 'app-cadastro',
-  templateUrl: './cadastro.component.html',
-  styleUrls: ['./cadastro.component.css'],
-  providers: [CadastroService]
+    selector: 'app-cadastro',
+    templateUrl: './cadastro.component.html',
+    styleUrls: ['./cadastro.component.css'],
+    providers: [CadastroService],
+    standalone: false
 })
 export class CadastroComponent implements OnInit {
 

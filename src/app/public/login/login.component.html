@@ -1,36 +1,55 @@
 <main id="login" class="d-flex">
 
-
-
-    <form>
-        <div id="camposLogin" class="">
-            <input type="email" class="form-control" placeholder="E-mail">
-        </div>
-        <div id="camposLogin" class="">
-            <input type="password" class="form-control" placeholder="Senha">
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+            {{ errorMessage }}
         </div>
 
+        <div id="camposLogin" class="">
+            <input 
+                type="email" 
+                class="form-control" 
+                placeholder="E-mail"
+                formControlName="email"
+                [class.is-invalid]="email?.invalid && email?.touched"
+            >
+            <div *ngIf="email?.invalid && email?.touched" class="invalid-feedback">
+                <small *ngIf="email?.errors?.['required']">E-mail é obrigatório</small>
+                <small *ngIf="email?.errors?.['email']">E-mail inválido</small>
+            </div>
+        </div>
 
+        <div id="camposLogin" class="">
+            <input 
+                type="password" 
+                class="form-control" 
+                placeholder="Senha"
+                formControlName="password"
+                [class.is-invalid]="password?.invalid && password?.touched"
+            >
+            <div *ngIf="password?.invalid && password?.touched" class="invalid-feedback">
+                <small *ngIf="password?.errors?.['required']">Senha é obrigatória</small>
+                <small *ngIf="password?.errors?.['minlength']">Senha deve ter no mínimo 6 caracteres</small>
+            </div>
+        </div>
 
         <div id="campoEntrar" class="container d-grid ">
-
-            <button type="submit" class="btn" name="entrar">
+            <button 
+                type="submit" 
+                class="btn" 
+                name="entrar"
+                [disabled]="loading"
+            >
                 <img id="imgSanduiche" src="assets/img/hamburguer.png">
-                ENTRAR
+                {{ loading ? 'ENTRANDO...' : 'ENTRAR' }}
                 <img id="imgBatata" src="assets/img/batatas-fritas.png">
             </button>
-
         </div>
+
         <div id="esqueceuSenha" class="container d-flex justify-content-center">
             <p><span routerLink="/recuperar-senha">Esqueceu a senha?</span></p>
         </div>
-
-
     </form>
-
-
-
-
 
     <p id="linkcadastro"><span routerLink="/cadastro">Cadastre-se</span></p>
 

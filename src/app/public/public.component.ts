@@ -5,9 +5,10 @@ import { Produto } from '../model/produto';
 import { PublicService } from './public.service';
 
 @Component({
-  selector: 'app-public',
-  templateUrl: './public.component.html',
-  styleUrls: ['./public.component.css']
+    selector: 'app-public',
+    templateUrl: './public.component.html',
+    styleUrls: ['./public.component.css'],
+    standalone: false
 })
 export class PublicComponent implements OnInit {
   produto:   Observable<Produto[]>;

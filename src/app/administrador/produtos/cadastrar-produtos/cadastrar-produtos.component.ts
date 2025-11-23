@@ -7,9 +7,10 @@ import { Produto } from 'src/app/model/produto';
 import { ProdutosService } from '../produtos.service';
 
 @Component({
-  selector: 'app-cadastrar-produtos',
-  templateUrl: './cadastrar-produtos.component.html',
-  styleUrls: ['./cadastrar-produtos.component.css']
+    selector: 'app-cadastrar-produtos',
+    templateUrl: './cadastrar-produtos.component.html',
+    styleUrls: ['./cadastrar-produtos.component.css'],
+    standalone: false
 })
 export class CadastrarProdutosComponent {
   registroForm!: FormGroup;
