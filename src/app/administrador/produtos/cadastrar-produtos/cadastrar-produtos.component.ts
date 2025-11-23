@@ -72,7 +72,11 @@ export class CadastrarProdutosComponent {
 
     if (this.produtoId) {
       produto._id = this.produtoId;
-      produto.id = this.produtoId as any;
+      // For backward compatibility, try to set id as Number if possible
+      const numId = Number(this.produtoId);
+      if (!isNaN(numId)) {
+        produto.id = numId;
+      }
       this.produtosService.atualizar(produto).subscribe(() => {
         alert('O '+produto.nome + produto.ingredientes+ 'foi atualizado com sucesso!');
         this.router.navigate(['/admin/produtos']);

@@ -8,7 +8,7 @@ import {
   UpdateCartQuantityRequest, 
   RemoveFromCartRequest,
   PayCartRequest 
-} from '../model/cart';
+} from '../../model/cart';
 import { environment } from 'src/environments/environments';
 
 @Injectable({
