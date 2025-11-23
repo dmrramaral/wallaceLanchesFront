@@ -22,11 +22,11 @@
             <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"
                 tabindex="0">
                 <ng-container *ngFor="let produtos of produto | async">
-                    <div id="sanduiche" *ngIf="produtos.categoria =='SANDUICHE'" class="card m-1">
+                    <div id="sanduiche" *ngIf="getCategoria(produtos) =='SANDUICHE'" class="card m-1">
                         <div class="card-body col-12">
                             <div class="row col-12">
                                 <div class="col-8 p-1">
-                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                                    <h5 class="card-title m-0"><b>{{getNome(produtos)}}</b></h5>
                                 </div>
                                 <div class="col-4">
                                     <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
@@ -37,7 +37,7 @@
                             </div>
                             <div class="row col-12">
                                 <p class="card-text m-0 p-1">{{ getIngredientesList(produtos) }}.</p>
-                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                                <p class="card-text m-0"><b>{{getValor(produtos) | currency: 'BRL' }}</b></p>
                             </div>
                         </div>
                     </div>
@@ -49,11 +49,11 @@
             <!-- Tabela Combo -->
             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab" tabindex="0">
                 <ng-container *ngFor="let produtos of produto | async">
-                    <div id="sanduiche" *ngIf="produtos.categoria =='COMBO'" class="card m-1">
+                    <div id="sanduiche" *ngIf="getCategoria(produtos) =='COMBO'" class="card m-1">
                         <div class="card-body col-12">
                             <div class="row col-12">
                                 <div class="col-8 p-1">
-                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                                    <h5 class="card-title m-0"><b>{{getNome(produtos)}}</b></h5>
                                 </div>
                                 <div class="col-4">
                                     <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
@@ -63,8 +63,8 @@
                                 </div>
                             </div>
                             <div class="row col-12">
-                                <p class="card-text m-0 p-1">{{ produtos.descricao }}.</p>
-                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                                <p class="card-text m-0 p-1">{{ getDescricao(produtos) }}.</p>
+                                <p class="card-text m-0"><b>{{getValor(produtos) | currency: 'BRL' }}</b></p>
                             </div>
                         </div>
                     </div>
@@ -74,11 +74,11 @@
             <!-- Tabela Bebida -->
             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab" tabindex="0">
                 <ng-container *ngFor="let produtos of produto | async">
-                    <div id="sanduiche" *ngIf="produtos.categoria =='BEBIDA'" class="card m-1">
+                    <div id="sanduiche" *ngIf="getCategoria(produtos) =='BEBIDA'" class="card m-1">
                         <div class="card-body col-12">
                             <div class="row col-12">
                                 <div class="col-8 p-1">
-                                    <h5 class="card-title m-0"><b>{{produtos.nome}}</b></h5>
+                                    <h5 class="card-title m-0"><b>{{getNome(produtos)}}</b></h5>
                                 </div>
                                 <div class="col-4">
                                     <button type="button" (click)="onRemove(produtos)" class="btn btn-default btn-sm"><i
@@ -88,8 +88,8 @@
                                 </div>
                             </div>
                             <div class="row col-12">
-                                <p class="card-text m-0 p-1">{{ produtos.descricao }}.</p>
-                                <p class="card-text m-0"><b>{{produtos.valor.toString() | currency: 'BRL' }}</b></p>
+                                <p class="card-text m-0 p-1">{{ getDescricao(produtos) }}.</p>
+                                <p class="card-text m-0"><b>{{getValor(produtos) | currency: 'BRL' }}</b></p>
                             </div>
                         </div>
                     </div>

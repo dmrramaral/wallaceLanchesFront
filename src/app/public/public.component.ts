@@ -22,7 +22,7 @@ export class PublicComponent implements OnInit {
     
   }
   getIngredientesList(produtos: Produto | null): string | undefined {
-    if (produtos === null) {
+    if (produtos === null || !produtos.ingredientes || produtos.ingredientes.length === 0) {
       return undefined;
     }
 
@@ -34,5 +34,21 @@ export class PublicComponent implements OnInit {
     } else {
       return ultimoIngrediente?.toString();
     }
+  }
+
+  getValor(produto: Produto): number {
+    return (produto.valor || produto.price || 0) as number;
+  }
+
+  getNome(produto: Produto): string {
+    return (produto.nome || produto.name || '') as string;
+  }
+
+  getDescricao(produto: Produto): string {
+    return (produto.descricao || produto.description || '') as string;
+  }
+
+  getCategoria(produto: Produto): string {
+    return (produto.categoria || produto.category || '') as string;
   }
 }

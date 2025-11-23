@@ -25,7 +25,7 @@ export class ProdutosComponent implements OnInit{
 
 
   getIngredientesList(produtos: Produto | null): string | undefined {
-    if (produtos === null) {
+    if (produtos === null || !produtos.ingredientes || produtos.ingredientes.length === 0) {
       return undefined;
     }
 
@@ -37,6 +37,22 @@ export class ProdutosComponent implements OnInit{
     } else {
       return ultimoIngrediente?.toString();
     }
+  }
+
+  getValor(produto: Produto): number {
+    return (produto.valor || produto.price || 0) as number;
+  }
+
+  getNome(produto: Produto): string {
+    return (produto.nome || produto.name || '') as string;
+  }
+
+  getDescricao(produto: Produto): string {
+    return (produto.descricao || produto.description || '') as string;
+  }
+
+  getCategoria(produto: Produto): string {
+    return (produto.categoria || produto.category || '') as string;
   }
 
   onAdd() {
@@ -53,7 +69,8 @@ export class ProdutosComponent implements OnInit{
 
   onEdit(produto: Produto) {
     // Navega para a página de cadastro com o ID do produto como parâmetro
-    this.router.navigate(['/admin/cadastrar-produtos'], { queryParams: {id: produto.id, edit: true } });
+    const id = produto._id || produto.id;
+    this.router.navigate(['/admin/cadastrar-produtos'], { queryParams: {id: id, edit: true } });
   
   }
 

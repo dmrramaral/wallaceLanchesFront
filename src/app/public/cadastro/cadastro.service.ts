@@ -12,7 +12,16 @@ export class CadastroService {
   constructor( private httpClient : HttpClient) { }
 
   public cadastrar(cliente : Cliente) : Observable<any> {
-    return this.httpClient.post<CadastroService>(`${environment.public_api}/cliente`, cliente).pipe(take(1));
-}
+    // Transform to backend format
+    const userData = {
+      name: cliente.nome || cliente.name,
+      email: cliente.email,
+      password: cliente.password,
+      phone: cliente.telefone || cliente.phone,
+      cpf: cliente.cpf
+    };
+    
+    return this.httpClient.post<any>(`${environment.public_api}/auth/register`, userData).pipe(take(1));
+  }
   
 }
