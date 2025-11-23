@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CommonModule } from '@angular/common';
-import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -17,6 +17,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdministradorComponent } from './administrador/administrador.component';
 import { ProdutosComponent } from './administrador/produtos/produtos.component';
 import { CadastrarProdutosComponent } from './administrador/produtos/cadastrar-produtos/cadastrar-produtos.component';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
 
 @NgModule({ declarations: [
         AppComponent,
@@ -34,5 +35,10 @@ import { CadastrarProdutosComponent } from './administrador/produtos/cadastrar-p
         CommonModule,
         ReactiveFormsModule,
         MatTabsModule,
-        BrowserAnimationsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
+        BrowserAnimationsModule], providers: [
+        provideHttpClient(
+            withInterceptors([authInterceptor])
+        )
+    ] })
 export class AppModule { }
+
