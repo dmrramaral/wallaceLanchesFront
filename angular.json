@@ -74,10 +74,10 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "wallaceLanchesFront:build:production"
+              "buildTarget": "wallaceLanchesFront:build:production"
             },
             "development": {
-              "browserTarget": "wallaceLanchesFront:build:development"
+              "buildTarget": "wallaceLanchesFront:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -85,7 +85,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "wallaceLanchesFront:build"
+            "buildTarget": "wallaceLanchesFront:build"
           }
         },
         "test": {

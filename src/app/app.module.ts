@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,33 +18,21 @@ import { AdministradorComponent } from './administrador/administrador.component'
 import { ProdutosComponent } from './administrador/produtos/produtos.component';
 import { CadastrarProdutosComponent } from './administrador/produtos/cadastrar-produtos/cadastrar-produtos.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    PublicComponent,
-    HeaderComponent,
-    FooterComponent,
-    LoginComponent,
-    AdministradorComponent,
-    ProdutosComponent,
-    CadastrarProdutosComponent,
-    
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    CommonModule,
-    ReactiveFormsModule,
-    MatTabsModule,
-    BrowserAnimationsModule
-
-
-
-
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        PublicComponent,
+        HeaderComponent,
+        FooterComponent,
+        LoginComponent,
+        AdministradorComponent,
+        ProdutosComponent,
+        CadastrarProdutosComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        CommonModule,
+        ReactiveFormsModule,
+        MatTabsModule,
+        BrowserAnimationsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
