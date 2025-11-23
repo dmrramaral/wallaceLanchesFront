@@ -1,40 +1,77 @@
-<div id="cadastro" class="container mt-3">
-    <form [formGroup]="cadastroForm" class="container col-10" (ngSubmit)="onSubmit()">
-        <div id="inputCadastro">
-            <!--Campo Nome    -->
-            <div id="inputName">
-                <input type="text" class="form-control" alt="Preencha com o seu nome" formControlName="nome" placeholder="Nome">
+<main id="cadastro">
+    <div class="cadastro-container">
+        <div class="cadastro-card">
+            <div class="cadastro-header">
+                <h2>Criar Conta</h2>
+                <p>Cadastre-se para fazer seus pedidos</p>
             </div>
 
-            <!--Campo Telefone    -->
-            <div id="inputTelefone">
-                <input type="text" class="form-control" alt="Preencha com o seu telefone" formControlName="telefone" placeholder="Telefone">
-            </div>
+            <form [formGroup]="cadastroForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="nome">Nome Completo</label>
+                    <input 
+                        type="text" 
+                        id="nome"
+                        class="form-control" 
+                        placeholder="Digite seu nome completo"
+                        formControlName="nome"
+                    >
+                </div>
 
-            <!--Campo CPF    -->
-            <div id="inputCPF">
-                <input type="text" class="form-control" alt="Preencha com o seu CPF" formControlName="cpf" placeholder="CPF">
-            </div>
+                <div class="form-group">
+                    <label for="telefone">Telefone</label>
+                    <input 
+                        type="text" 
+                        id="telefone"
+                        class="form-control" 
+                        placeholder="(00) 00000-0000"
+                        formControlName="telefone"
+                    >
+                </div>
 
-            <!--Campo E-mail    -->
-            <div id="inputEmail">
-                <input type="email" class="form-control" alt="Preencha com o seu e-mail" formControlName="email" placeholder="E-mail">
-            </div>
+                <div class="form-group">
+                    <label for="cpf">CPF</label>
+                    <input 
+                        type="text" 
+                        id="cpf"
+                        class="form-control" 
+                        placeholder="000.000.000-00"
+                        formControlName="cpf"
+                    >
+                </div>
 
-            <!--Campo Senha    -->
-            <div id="inputSenha">
-                <input type="password" class="form-control" alt="Preencha com a sua senha" formControlName="password" placeholder="Senha">
-            </div>
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input 
+                        type="email" 
+                        id="email"
+                        class="form-control" 
+                        placeholder="Digite seu e-mail"
+                        formControlName="email"
+                    >
+                </div>
 
-            <div class="container text-center g-2">
-                <button id="buttonCadastro" class="btn" type="submit">
-                    <img id="imgSanduiche" src="assets\img\hamburguer.png" alt="Icone de um Sanduíche">
-                    Cadastrar
-                    <img id="imgBatata" src="assets\img\batatas-fritas.png" alt="Icone de uma Batatas Frita">
-                </button>
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input 
+                        type="password" 
+                        id="password"
+                        class="form-control" 
+                        placeholder="Digite sua senha"
+                        formControlName="password"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-block">
+                        Cadastrar
+                    </button>
+                </div>
+            </form>
+
+            <div class="login-link">
+                <p>Já possui cadastro? <a routerLink="/login">Entrar</a></p>
             </div>
         </div>
-    </form>
-</div>
-
-<p id="mensagemJaPossui">Já possui cadastro?<span id="linkEntrar" routerLink="/login"> Entrar</span></p>
+    </div>
+</main>

@@ -1,50 +1,23 @@
-@media (max-width: 576px) {
-  .cabecalho .logo {
-    padding: 2rem;
-  }
-
-  footer {
-    font-size: xx-small;
-    background-color: #ca0f0fe5;
-    position: inherit;
-    bottom: 0;
-    left: 0;
-    right: 0;
-
-    padding: 1rem 2rem;
-    text-align: center;
-
-  }
-
-  .cabecalho p {
-    font-size: 1.5rem
-  }
-}
-
-@media (max-width: 768px) {
-  footer {
-    display: flex;
-    flex-direction: column-reverse;
-    gap: 1rem;
-    margin-bottom: 0px;
-
-    position: inherit;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #ca0f0fe5;
-    padding: 1rem 2rem;
-    text-align: center;
-  }
-}
-
+/* Footer Styles */
 footer {
-  background-color: #ca0f0fe5;
-  position: inherit;
-  bottom: 0;
-  left: 0;
-  right: 0;
+    background: linear-gradient(135deg, #212529 0%, #343a40 100%);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+    margin-top: auto;
+}
 
-  padding: 1rem 2rem;
-  text-align: center;
+footer small {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+@media (max-width: 576px) {
+    footer {
+        padding: 1.5rem 1rem;
+    }
+    
+    footer small {
+        font-size: 0.875rem;
+    }
 }

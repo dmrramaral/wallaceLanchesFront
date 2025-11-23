@@ -1,175 +1,83 @@
 /*  */
 
+/* Modern Color Scheme */
 :root {
-    --bs-blue: #0d6efd !important;
-    --bs-indigo: #6610f2 !important;
-    --bs-purple: #6f42c1 !important;
-    --bs-pink: #d63384 !important;
-    --bs-red: #dc3545 !important;
-    --bs-orange: #fd7e14 !important;
-    --bs-yellow: #ffc107 !important;
-    --bs-green: #198754 !important;
-    --bs-teal: #20c997 !important;
-    --bs-cyan: #0dcaf0 !important;
-    --bs-black: #000 !important;
-    --bs-white: #fff !important;
-    --bs-gray: #6c757d !important;
-    --bs-gray-dark: #343a40 !important;
-    --bs-gray-100: #f8f9fa !important;
-    --bs-gray-200: #e9ecef !important;
-    --bs-gray-300: #dee2e6 !important;
-    --bs-gray-400: #ced4da !important;
-    --bs-gray-500: #adb5bd !important;
-    --bs-gray-600: #6c757d !important;
-    --bs-gray-700: #495057 !important;
-    --bs-gray-800: #343a40 !important;
-    --bs-gray-900: #212529 !important;
     --bs-primary: #dc3545 !important;
+    --bs-primary-rgb: 220, 53, 69 !important;
     --bs-secondary: #6c757d !important;
     --bs-success: #198754 !important;
-    --bs-info: #ffc107 !important;
     --bs-warning: #ffc107 !important;
     --bs-danger: #dc3545 !important;
     --bs-light: #f8f9fa !important;
     --bs-dark: #212529 !important;
-    --bs-primary-rgb: 220, 53, 69 !important;
-    --bs-secondary-rgb: 255, 193, 7 !important;
-    --bs-success-rgb: 25, 135, 84 !important;
-    --bs-info-rgb: 13, 202, 240 !important;
-    --bs-warning-rgb: 255, 193, 7 !important;
-    --bs-danger-rgb: 220, 53, 69 !important;
-    --bs-light-rgb: 248, 249, 250 !important;
-    --bs-dark-rgb: 33, 37, 41 !important;
-    --bs-primary-text-emphasis: #c90805 !important;
-    --bs-secondary-text-emphasis: #2b2f32 !important;
-    --bs-success-text-emphasis: #0a3622 !important;
-    --bs-info-text-emphasis: #055160 !important;
-    --bs-warning-text-emphasis: #664d03 !important;
-    --bs-danger-text-emphasis: #58151c !important;
-    --bs-light-text-emphasis: #495057 !important;
-    --bs-dark-text-emphasis: #495057 !important;
-    --bs-primary-bg-subtle: #cfe2ff !important;
-    --bs-secondary-bg-subtle: #e2e3e5 !important;
-    --bs-success-bg-subtle: #d1e7dd !important;
-    --bs-info-bg-subtle: #cff4fc !important;
-    --bs-warning-bg-subtle: #fff3cd !important;
-    --bs-danger-bg-subtle: #f8d7da !important;
-    --bs-light-bg-subtle: #fcfcfd !important;
-    --bs-dark-bg-subtle: #ced4da !important;
-    --bs-primary-border-subtle: #9ec5fe !important;
-    --bs-secondary-border-subtle: #c4c8cb !important;
-    --bs-success-border-subtle: #a3cfbb !important;
-    --bs-info-border-subtle: #9eeaf9 !important;
-    --bs-warning-border-subtle: #ffe69c !important;
-    --bs-danger-border-subtle: #f1aeb5 !important;
-    --bs-light-border-subtle: #e9ecef !important;
-    --bs-dark-border-subtle: #adb5bd !important;
-    --bs-white-rgb: 255, 255, 255 !important;
-    --bs-black-rgb: 0, 0, 0 !important;
-    --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-    --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
-    --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)) !important;
-    --bs-body-font-family: var(--bs-font-sans-serif) !important;
-    --bs-body-font-size: 1rem !important;
-    --bs-body-font-weight: 400 !important;
-    --bs-body-line-height: 1.5 !important;
-    --bs-body-color: #212529 !important;
-    --bs-body-color-rgb: 33, 37, 41 !important;
-    --bs-body-bg: #fff !important;
-    --bs-body-bg-rgb: 255, 255, 255 !important;
-    --bs-emphasis-color: #000 !important;
-    --bs-emphasis-color-rgb: 0, 0, 0 !important;
-    --bs-secondary-color: rgba(33, 37, 41, 0.75) !important;
-    --bs-secondary-color-rgb: 33, 37, 41 !important;
-    --bs-secondary-bg: #e9ecef !important;
-    --bs-secondary-bg-rgb: 233, 236, 239 !important;
-    --bs-tertiary-color: rgba(33, 37, 41, 0.5) !important;
-    --bs-tertiary-color-rgb: 33, 37, 41 !important;
-    --bs-tertiary-bg: #f8f9fa !important;
-    --bs-tertiary-bg-rgb: 248, 249, 250 !important;
-    --bs-heading-color: inherit !important;
-    --bs-link-color: #fd0d0d !important;
-    --bs-link-color-rgb: 13, 110, 253 !important;
-    --bs-link-decoration: underline !important;
-    --bs-link-hover-color: #ca0a0a !important;
-    --bs-link-hover-color-rgb: 10, 88, 202 !important;
-    --bs-code-color: #d63384 !important;
-    --bs-highlight-bg: #fff3cd !important;
-    --bs-border-width: 1px !important;
-    --bs-border-style: solid !important;
-    --bs-border-color: #dee2e6 !important;
-    --bs-border-color-translucent: rgba(0, 0, 0, 0.175) !important;
-    --bs-border-radius: 0.375rem !important;
-    --bs-border-radius-sm: 0.25rem !important;
-    --bs-border-radius-lg: 0.5rem !important;
-    --bs-border-radius-xl: 1rem !important;
-    --bs-border-radius-xxl: 2rem !important;
-    --bs-border-radius-2xl: var(--bs-border-radius-xxl) !important;
-    --bs-border-radius-pill: 50rem !important;
-    --bs-box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
-    --bs-box-shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
-    --bs-box-shadow-lg: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
-    --bs-box-shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.075) !important;
-    --bs-focus-ring-width: 0.25rem !important;
-    --bs-focus-ring-opacity: 0.25 !important;
-    --bs-focus-ring-color: rgba(13, 110, 253, 0.25) !important;
-    --bs-form-valid-color: #198754 !important;
-    --bs-form-valid-border-color: #198754 !important;
-    --bs-form-invalid-color: #dc3545 !important;
-    --bs-form-invalid-border-color: #dc3545 !important;
-    --bs-nav-link-active-color: #fd290d !important;
-    --bs-nav-link-hover-color: #fd0d0d !important;
-
-    --bs-nav-pills-link-active-color: #faee03 !important;
-    --bs-nav-pills-link-active-bg: #fd290d !important;
-    --bs-nav-pills-link-hover-color: #fd0d0d !important;
-    --bs-nav-pills-link-hover-bg: #faee03 !important;
-    
 }
-
-.nav-pills .nav-link.active,.nav-pills .show>.nav-link {
-    color:#faee03 !important;
-    background-color: #fd0d0d !important;
-}
-
-
 
 .btn-primary {
-    --primary: #d80000 !important;
-    background: red !important;
-    border-color: red !important;
-    color: yellow !important;
-
-
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
+.btn-primary:hover {
+    background-color: #c82333 !important;
+    border-color: #c82333 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.btn-outline-primary {
+    border: 2px solid #dc3545 !important;
+    color: #dc3545 !important;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background-color: #dc3545 !important;
+    border-color: #dc3545 !important;
+    color: white !important;
+    transform: translateY(-2px);
+}
 
 body {
-    background: rgba(216, 0, 0, 0.911) !important;
+    background-color: white !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 html,
 body {
     position: relative;
     min-height: 100vh;
-}
-
-body {
     margin: 0;
-    font-family: Roboto, "Helvetica Neue", sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 main {
-    /* Defina a altura do conteúdo principal da página, isso pode variar dependendo do seu layout */
-    min-height: calc(100vh - (2rem + 1rem)); /* Subtrai a altura do header e padding do footer */
+    min-height: calc(100vh - 200px);
 }
 
 footer {
-    position: inherit;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #ca0f0fe5;
-    padding: 1rem 2rem;
-    text-align: center;
+    margin-top: auto;
+}
+
+/* Nav Pills Modern Styling */
+.nav-pills .nav-link {
+    color: #495057;
+    border-radius: 50px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #f8f9fa;
+    color: #dc3545;
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show>.nav-link {
+    background-color: #dc3545 !important;
+    color: white !important;
 }
